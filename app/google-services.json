@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "469172910335",
+    "project_id": "crud-automovel-546dd",
+    "storage_bucket": "crud-automovel-546dd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:469172910335:android:89de513bcd8780339874ca",
+        "android_client_info": {
+          "package_name": "br.com.codeschool.crud_automovel.view"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5mTlH74vuC6FknSQXkYOKoDRa_gUMpy4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
