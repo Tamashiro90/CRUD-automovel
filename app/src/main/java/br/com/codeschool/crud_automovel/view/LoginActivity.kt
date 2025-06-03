@@ -56,7 +56,22 @@ class LoginActivity:AppCompatActivity() {
             binding.barraDeProgresso.visibility = if(estaCarregando) View.VISIBLE else View.GONE
 
         }
+        viewModel.erro.observe(this) { erro ->
+            erro?.let {
+                Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
+                viewModel.limparErro()
+            }
+        }
+        viewModel.usuarioLogado.observe(this) { sucesso ->
+            if(sucesso){
+                irParaListaVeiculos()
+                viewModel.limparSucessoLogin()
+            }
+        }
+        viewModel.resetSenhaSucesso.observe(this){ sucesso ->
+            if(sucesso){
 
-
+            }
+        }
     }
 }
