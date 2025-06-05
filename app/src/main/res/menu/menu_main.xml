@@ -5,6 +5,5 @@
         android:id="@+id/deslogar"
         android:orderInCategory="100"
         android:title="Sair"
-        app:showAsAction="never">
-    </item>
+        app:showAsAction="never"/>
 </menu>

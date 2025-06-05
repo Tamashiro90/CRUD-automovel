@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".view.ListaVeiculosActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/Theme.CRUDautomovel.AppBarOverlay">
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/barraFerramentas"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/Theme.CRUDautomovel.PopupOverlay"/>
-
+        <!--Toolbar=barra de ferramentas
+         ? - Buscar pelo Theme  - altura da view será igual à altura padrão da barra de ação-->
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -34,8 +36,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:queryHint="@string/search"
-            app:iconifiedByDefault="false">
-        </androidx.appcompat.widget.SearchView>
+            app:iconifiedByDefault="false"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv"
@@ -43,21 +44,20 @@
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/svPesquisar"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/svPesquisar"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+    
     <ProgressBar
         android:id="@+id/barraDeProgresso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        app:layout_constraintTop_toTopof="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-    </ProgressBar>
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
         android:id="@+id/tvListaVazia"
@@ -65,18 +65,16 @@
         android:layout_height="wrap_content"
         android:text="Nenhum veículo cadastrado"
         android:visibility="gone"
-        app:layout_constraintTop_toTopof="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    </TextView>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/botaoFlutuante"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        app:srcCompat="@android:drawable/ic_input_add">
+        app:srcCompat="@android:drawable/ic_input_add"/>
 
-    </com.google.android.material.floatingactionbutton.FloatingActionButton>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
