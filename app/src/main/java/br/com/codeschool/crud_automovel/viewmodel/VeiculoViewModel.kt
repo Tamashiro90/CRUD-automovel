@@ -26,7 +26,7 @@ class VeiculoViewModel: ViewModel(){
     private val _operacaoSucesso = MutableLiveData<Boolean>()
     val operacaoSucesso: LiveData<Boolean> = _operacaoSucesso
 
-    fun carregaVeiculos(){
+    fun carregarVeiculos(){
         viewModelScope.launch {
             _loading.value = true
             try{
@@ -96,6 +96,21 @@ class VeiculoViewModel: ViewModel(){
                 _erro.value = null
             } catch (e: Exception){
                 _operacaoSucesso.value=false
+                _erro.value = e.message
+            } finally {
+                _loading.value = false
+            }
+        }
+    }
+
+    fun buscarVeiculos(consulta: String) {
+        viewModelScope.launch {
+            _loading.value = true
+            try {
+                val listaVeiculos = repository.buscarVeiculos(consulta)
+                _veiculos.value = listaVeiculos
+                _erro.value = null
+            } catch (e: Exception) {
                 _erro.value = e.message
             } finally {
                 _loading.value = false
